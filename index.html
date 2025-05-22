@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Technomedical | Soluciones Tecnológicas para Laboratorios</title>
+  <meta name="description" content="Technomedical - Aliado estratégico para equipamiento de laboratorios, venta de reactivos, servicio técnico y asesoría especializada en Colombia">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary-color: #01395E;
+      --secondary-color: #00A0E3;
+      --accent-color: #FF6B00;
+      --text-color: #333;
+      --light-gray: #f8f9fa;
+      --medium-gray: #e9ecef;
+      --dark-gray: #495057;
+      --banner-color: #004D61;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, var(--light-gray) 0%, var(--medium-gray) 100%);
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+    
+    .card {
+      background: #ffffff;
+      max-width: 750px; /* Aumentado de 480px a 576px (20% más) */
+      width: 100%;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      border-radius: 20px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    }
+    
+    .banner {
+      background-color: var(--banner-color);
+      background-image: url('back.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      padding: 50px 20px; /* Aumentado el padding vertical */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .banner::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(0,0,0,0.1) 0%, rgba(255,255,255,0.1) 100%);
+    }
+    
+    .logo-container {
+      position: relative;
+      z-index: 2;
+    }
+    
+    .logo {
+      width: 450px;
+      height: auto;
+      transition: transform 0.3s ease;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+    }
+    
+    .logo:hover {
+      transform: scale(1.05);
+    }
+    
+    .card-content {
+      padding: 36px; /* Aumentado de 30px a 36px */
+    }
+    
+    h1 {
+      font-size: 2.4rem; /* Aumentado de 2rem a 2.4rem */
+      color: var(--primary-color);
+      margin: 0 0 12px; /* Aumentado el margen inferior */
+      font-weight: 700;
+      position: relative;
+      display: inline-block;
+    }
+    
+    h1::after {
+      content: '';
+      position: absolute;
+      bottom: -10px; /* Ajustado */
+      left: 50%;
+      transform: translateX(-50%);
+      width: 72px; /* Aumentado de 60px a 72px */
+      height: 4px; /* Aumentado de 3px a 4px */
+      background: var(--secondary-color);
+      border-radius: 3px;
+    }
+    
+    .tagline {
+      font-size: 1.2rem; /* Aumentado de 1rem a 1.2rem */
+      color: var(--dark-gray);
+      margin-bottom: 24px; /* Aumentado de 20px a 24px */
+      font-weight: 500;
+    }
+    
+    h2 {
+      font-size: 1.5rem; /* Aumentado de 1.3rem a 1.5rem */
+      color: var(--primary-color);
+      margin: 30px 0 18px; /* Aumentados los márgenes */
+      text-align: left;
+      font-weight: 600;
+      position: relative;
+      padding-left: 18px; /* Aumentado de 15px a 18px */
+    }
+    
+    h2::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 6px; /* Ajustado */
+      height: 70%;
+      width: 5px; /* Aumentado de 4px a 5px */
+      background: var(--accent-color);
+      border-radius: 3px;
+    }
+    
+    p {
+      color: var(--text-color);
+      font-size: 1.1rem; /* Aumentado de 0.95rem a 1.1rem */
+      line-height: 1.7;
+      margin: 12px 0; /* Aumentado de 10px a 12px */
+      text-align: left;
+    }
+    
+    .highlight {
+      background-color: rgba(0, 160, 227, 0.1);
+      padding: 18px; /* Aumentado de 15px a 18px */
+      border-radius: 12px; /* Aumentado de 10px a 12px */
+      margin: 24px 0; /* Aumentado de 20px a 24px */
+      border-left: 5px solid var(--secondary-color); /* Aumentado de 4px a 5px */
+    }
+    
+    .highlight p {
+      margin: 0;
+      font-weight: 500;
+      color: var(--primary-color);
+      font-size: 1.15rem; /* Tamaño especial para texto destacado */
+    }
+    
+    .contacto, .redes {
+      margin-top: 30px; /* Aumentado de 25px a 30px */
+      text-align: left;
+    }
+    
+    .contact-list, .social-list {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .contact-list li, .social-list li {
+      margin-bottom: 12px; /* Aumentado de 10px a 12px */
+    }
+    
+    .contact-list a, .social-list a {
+      display: flex;
+      align-items: center;
+      color: var(--primary-color);
+      text-decoration: none;
+      transition: color 0.3s ease, transform 0.2s ease;
+      font-weight: 500;
+      font-size: 1.1rem; /* Aumentado para enlaces */
+    }
+    
+    .contact-list a:hover, .social-list a:hover {
+      color: var(--secondary-color);
+      transform: translateX(5px);
+    }
+    
+    .contact-list i, .social-list i {
+      margin-right: 12px; /* Aumentado de 10px a 12px */
+      width: 24px; /* Aumentado de 20px a 24px */
+      text-align: center;
+      color: var(--secondary-color);
+      font-size: 1.2rem; /* Iconos más grandes */
+    }
+    
+    .btn-container {
+      margin-top: 36px; /* Aumentado de 30px a 36px */
+    }
+    
+    .btn {
+      background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+      color: white;
+      padding: 14px 30px; /* Aumentado de 12px 25px a 14px 30px */
+      text-decoration: none;
+      border-radius: 10px;
+      display: inline-block;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      border: none;
+      cursor: pointer;
+      font-size: 1.2rem; /* Aumentado de 1rem a 1.2rem */
+    }
+    
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+    }
+    
+    .btn i {
+      margin-left: 10px; /* Aumentado de 8px a 10px */
+    }
+    
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px; /* Aumentado de 10px a 12px */
+      margin: 18px 0; /* Aumentado de 15px a 18px */
+    }
+    
+    .service-item {
+      background-color: var(--light-gray);
+      padding: 12px; /* Aumentado de 10px a 12px */
+      border-radius: 10px; /* Aumentado de 8px a 10px */
+      font-size: 1rem; /* Aumentado de 0.85rem a 1rem */
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    
+    .service-item:hover {
+      background-color: var(--secondary-color);
+      color: white;
+      transform: scale(1.03);
+    }
+
+    .origen-banner {
+      width: 100%;
+    }
+
+    .center-image {
+        width: 600px;
+        height: auto;
+      }
+
+    .black-banner {
+        width: 100%;
+        height: 70px;
+        background-color: #2B415B;
+        background-image: url('background-origen.png');
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    .banner-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 86px;
+        object-fit: cover;
+        z-index: 1;
+    }
+
+    .banner-link {
+        transition: transform 0.3s ease;
+    }
+
+    .banner-link:hover {
+        transform: scale(1.05);
+    }
+    
+    @media (max-width: 600px) { /* Ajustado el breakpoint de 480px a 600px */
+      .card {
+        width: 95%;
+        max-width: 95%;
+      }
+      
+      .banner {
+        padding: 40px 15px;
+      }
+      
+      .logo {
+        width: 120px; /* Aumentado proporcionalmente */
+      }
+      
+      .card-content {
+        padding: 24px;
+      }
+      
+      h1 {
+        font-size: 2rem;
+      }
+      
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="banner">
+      <div class="logo-container">
+        <img src="logo-technomedical.png" alt="Logo Technomedical" class="logo">
+      </div>
+    </div>
+    
+    <div class="card-content">
+      <p class="tagline">Innovación tecnológica para laboratorios de excelencia</p>
+      
+      <div class="highlight">
+        <p>Síguenos y mantente actualizado con lo último en tecnología para laboratorios clínicos y de investigación</p>
+      </div>
+      
+      <h2>Nuestros Servicios</h2>
+      <p>Technomedical es el aliado estratégico que impulsa el avance tecnológico de laboratorios, clínicas y centros de diagnóstico en Colombia, ofreciendo soluciones integrales y personalizadas.</p>
+      
+      <div class="services-grid">
+        <div class="service-item">Equipamiento de laboratorios</div>
+        <div class="service-item">Asesoramiento especializado</div>
+        <div class="service-item">Venta de reactivos</div>
+        <div class="service-item">Venta de equipos</div>
+        <div class="service-item">Servicio técnico</div>
+        <div class="service-item">Capacitaciones</div>
+      </div>
+
+      <div class="contacto">
+        <h2>Contacto</h2>
+        <ul class="contact-list">
+          <li>
+            <a href="tel:+573001234567">
+              <i class="fas fa-phone-alt"></i> +57 300 123 4567
+            </a>
+          </li>
+          <li>
+            <a href="https://wa.me/573001234567">
+              <i class="fab fa-whatsapp"></i> Escríbenos por WhatsApp
+            </a>
+          </li>
+          <li>
+            <a href="mailto:contacto@technomedical.com.co">
+              <i class="fas fa-envelope"></i> contacto@technomedical.com.co
+            </a>
+          </li>
+          <li>
+            <a href="https://www.technomedical.com.co" target="_blank">
+              <i class="fas fa-globe"></i> www.technomedical.com.co
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="redes">
+        <h2>Conéctate con Nosotros</h2>
+        <ul class="social-list">
+          <li>
+            <a href="https://www.facebook.com/technomedical" target="_blank">
+              <i class="fab fa-facebook-f"></i> Facebook
+            </a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/technomedical" target="_blank">
+              <i class="fab fa-instagram"></i> Instagram
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/company/technomedical" target="_blank">
+              <i class="fab fa-linkedin-in"></i> LinkedIn
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="btn-container">
+        <a class="btn" href="https://www.technomedical.com.co" target="_blank">
+          Visitar nuestro sitio web <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+
+    <div class="origen-banner">
+      <div class="footer-band">
+        <div class="banner-container">
+              <div class="black-banner">
+                  <a href="https://www.SomosOrigen.com" class="banner-link" target="_blank">
+                      <img src="origen-link.png" alt="Logo centrado" class="center-image">
+                  </a>
+              </div>
+          </div>
+      </div>      
+    </div>    
+  </div>
+</body>
+</html>
